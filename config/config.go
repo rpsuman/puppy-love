@@ -11,7 +11,7 @@ var (
 	CfgAddr             = ":3000"
 	CfgMgoUrl           = "mongodb://0.0.0.0:27017/puppy"
 	CfgRedisUrl         = "0.0.0.0:6379"
-	SignupUrl    string = "http://0.0.0.0:3001"
+	SignupUrl    string = "http://localhost:3001"
 )
 
 func CfgInit() {

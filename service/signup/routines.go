@@ -72,14 +72,15 @@ func SignupService(
 
 func MailerService(Db PuppyDb, mail_channel chan User) {
 	mailCounter := 0
+	log.Println(EmailUser)
 	auth := smtp.PlainAuth("", EmailUser, EmailPass,
 		EmailHost)
 
 	for u := range mail_channel {
 		log.Println("Setting up smtp")
 
-		to := []string{u.Email + "@iitk.ac.in"}
-		msg := []byte("To: " + u.Email + "@iitk.ac.in" + "\r\n" +
+		to := []string{u.Email}
+		msg := []byte("To: " + u.Email + "\r\n" +
 			"Subject: Puppy-Love authentication code\r\n" +
 			"\r\n" +
 			"Use this token while signing up, and don't share it with anyone.\n" +

@@ -30,7 +30,7 @@ func CfgInit() {
 
 	if EmailPort == "" {
 		log.Println("No email port")
-		EmailHost = "587"
+		EmailPort = "587"
 	}
 
 	// Mongo ENV variables
