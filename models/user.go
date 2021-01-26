@@ -58,6 +58,26 @@ func NewUser(info *TypeUserNew) User {
 	}
 }
 
+func NewUserF(info string) User {
+	return User{
+		Id:      info,
+		Name:    "",
+		Email:   info,
+		Gender:  "",
+		Image:   "",
+		Pass:    "",
+		PrivK:   "",
+		PubK:    "",
+		AuthC:   utils.RandStringRunes(15),
+		Data:    "",
+		Submit:  false,
+		Matches: "",
+		Vote:    0,
+		Dirty:   true,
+		SPass:   "",
+	}
+}
+
 // ----------------------------------------
 type TypeUserFirst struct {
 	Id       string `json:"roll"`

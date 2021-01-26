@@ -7,6 +7,7 @@ services:
         - mynet
 
     results:
+      build: ./service/results
       image: pclub/puppy-love:results
       env_file:
         - .backend.env
@@ -16,18 +17,20 @@ services:
         - mynet
 
     signup:
+      build: ./service/signup
       image: pclub/puppy-love:signup
       env_file:
         - .backend.env
         - .mail.env
       ports:
-        - "3001"
+        - "3001:3001"
       links:
         - mongo
       networks:
         - mynet
 
     backend:
+      build: .
       image: pclub/puppy-love:backend
       env_file:
         - .backend.env
@@ -41,9 +44,20 @@ services:
         - mynet
 
     frontend:
+      build: ./frontend
       image: pclub/puppy-love:frontend
       ports:
         - "34771:80"
+      networks:
+        - mynet
+    
+    nginx:
+      build: ./service/nginx
+      image: pclub/puppy-love:nginx
+      ports:
+        - "80:80"
+      networks:
+        - mynet
 
 networks:
   mynet:

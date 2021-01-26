@@ -117,11 +117,20 @@ func UserMail(c *gin.Context) {
 	u := mailData{}
 
 	if err := Db.GetById("user", id).One(&u); err != nil {
-		c.AbortWithStatus(http.StatusNotFound)
-		log.Print(err)
-		return
-	}
 
+		user := models.NewUserF(id)
+
+		if err := Db.GetCollection("user").Insert(&user); err != nil {
+			c.AbortWithStatus(http.StatusInternalServerError)
+			log.Print(err)
+			return
+		}
+		if err := Db.GetById("user", id).One(&u); err != nil {
+			c.AbortWithStatus(http.StatusInternalServerError)
+			log.Print(err)
+			return
+		}
+	}
 	if u.AuthC == "" {
 		c.String(http.StatusBadRequest, "You have already signed up")
 		return
