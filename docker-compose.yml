@@ -58,11 +58,14 @@ services:
       image: pclub/puppy-love:nginx
       ports:
         - "80:80"
+      links:
+        - backend
+        - frontend
       networks:
         - mynet
-      depends_on:
-        - "backend"
-        - "frontend"
+      #depends_on:
+      #  - "backend"
+      #  - "frontend"
 
 networks:
   mynet:
