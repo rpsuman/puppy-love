@@ -46,9 +46,9 @@ for person in text:
     if payload['email'] == "\"Not Available\"":
         continue
 
-    if data[GENDER] == '"M"':
+    if data[GENDER] == "M":
         payload['gender'] = "1"
-    elif data[GENDER] == '"F"':
+    elif data[GENDER] == "F":
         payload['gender'] = "0"
     else:
         print("ERROR: finding gender of person {}".format(payload[roll]))
