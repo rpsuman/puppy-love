@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/rpsuman/puppy-love/utils"
+	"github.com/rpsuman/puppy_love/utils"
 
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
