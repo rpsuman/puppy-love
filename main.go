@@ -10,6 +10,7 @@ import (
 	"github.com/rpsuman/puppy_love/utils"
 
 	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/cookie"
 	"github.com/gin-gonic/gin"
 )
 
@@ -32,7 +33,7 @@ func main() {
 	utils.Randinit()
 
 	// set up session db
-	store := sessions.NewCookieStore([]byte(config.CfgAdminPass))
+	store := cookie.NewStore([]byte(config.CfgAdminPass))
 
 	// iris.Config.Gzip = true
 	r := gin.Default()
