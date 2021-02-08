@@ -7,17 +7,18 @@ with open(sys.argv[1]) as f:
 if len(sys.argv) >= 3:
     host = sys.argv[2]
 else:
-    host = 'http://localhost:3000'
+    host = 'http://localhost:34770'
 
 url = host + '/admin/user/new'
+composeurl = host + '/admin/declare/prepare'
 loginurl = host + '/session/login'
 logouturl = host + '/session/logout'
 
 ROLLNUM=0
-NAME=2
-EMAIL=7
-GENDER=9
-IMAGE=10
+NAME=1
+EMAIL=2
+IMAGE=3
+GENDER=4
 
 s = r.Session()
 print("Logging in")
@@ -40,14 +41,14 @@ for person in text:
 
     payload['roll'] = data[ROLLNUM]
     payload['name'] = data[NAME][1:-1]
-    payload['email'] = data[EMAIL].split('@')[0]
+    payload['email'] = data[EMAIL]
     payload['image'] = data[IMAGE]
     if payload['email'] == "\"Not Available\"":
         continue
 
-    if data[GENDER] == 'M':
+    if data[GENDER] == '"M"':
         payload['gender'] = "1"
-    elif data[GENDER] == 'F':
+    elif data[GENDER] == '"F"':
         payload['gender'] = "0"
     else:
         print("ERROR: finding gender of person {}".format(payload[roll]))
@@ -56,6 +57,11 @@ for person in text:
     print(payload)
 
     resp = s.post(url, json=payload)
+    print("Code: " + str(resp.status_code))
+    if resp.status_code > 299:
+        print(resp.text)
+
+    resp = s.get(composeurl)
     print("Code: " + str(resp.status_code))
     if resp.status_code > 299:
         print(resp.text)

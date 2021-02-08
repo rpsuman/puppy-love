@@ -5,6 +5,8 @@ services:
       image: mongo
       networks:
         - mynet
+      ports:
+        - "27017:27017"
 
     results:
       build: ./service/results
@@ -58,6 +60,9 @@ services:
         - "80:80"
       networks:
         - mynet
+      depends_on:
+        - "backend"
+        - "frontend"
 
 networks:
   mynet:
