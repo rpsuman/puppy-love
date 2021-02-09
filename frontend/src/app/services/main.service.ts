@@ -125,6 +125,7 @@ export class MainService {
               hearts: data.hearts || [],
               lastCheck: data.lastCheck || 0,
               received: data.received || [],
+              matches: data.matches || [],
             }
           };
         }),
