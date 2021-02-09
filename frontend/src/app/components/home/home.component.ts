@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ENTER, COMMA } from '@angular/cdk/keycodes';
 
 import { MainService } from '../../services/main.service';
-
+import { catchError, switchMap } from 'rxjs/operators';
 function ImageURL(rollnum: string, userid: string) {
     const iitkhome = `http://home.iitk.ac.in/~${ userid }/dp`;
     const oaimage = `https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${ rollnum }_0.jpg`;
