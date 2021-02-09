@@ -40,7 +40,7 @@ for person in text:
     payload = {}
 
     payload['roll'] = data[ROLLNUM]
-    payload['name'] = data[NAME][1:-1]
+    payload['name'] = data[NAME]
     payload['email'] = data[EMAIL]
     payload['image'] = data[IMAGE]
     if payload['email'] == "\"Not Available\"":
