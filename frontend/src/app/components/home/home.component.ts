@@ -124,7 +124,7 @@ export class HomeComponent implements OnInit {
         } else {
           console.log(match);
           this.matches = match.matches.split(' ').map(x => this.main.people.filter(p => p._id === x)[0]);
-          console.log(matches);
+          console.log(this.matches);
         }
       },
       (error) => this.snackbar.open(error, '', { duration: 3000 })
