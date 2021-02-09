@@ -86,7 +86,6 @@ interface User {
     hearts: Heart[],
     lastCheck: number,
     received: ReceivedHeart[],
-    matches: MatchInfo[],
   }
 }
 
@@ -126,7 +125,6 @@ export class MainService {
               hearts: data.hearts || [],
               lastCheck: data.lastCheck || 0,
               received: data.received || [],
-              matches: data.matches || [],
             }
           };
         }),
