@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutAlign="center stretch" class="container" (click)="selectStudent()">
-  <div class="img" style.background-image="/assets/student.ico">
+  <div class="img" [style.background-image]=url(/assets/student.ico)>
   </div>
   <div class="info">
     <span class="name"> {{ student.name }} </span> <br>
