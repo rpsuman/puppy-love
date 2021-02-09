@@ -3,7 +3,7 @@
   flex-grow: 1;
   min-width: 140px;
   width: 20%;
-  background-image=url("/assets/student.ico");
+  background-image: url("/assets/student.ico");
 }
 
 .info {
