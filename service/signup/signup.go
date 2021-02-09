@@ -19,6 +19,7 @@ func (ctx appHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	CfgInit()
+	log.Println("Entered Signup")
 	mongoDb, error := MongoConnect()
 	if error != nil {
 		fmt.Print("[Error] Could not connect to MongoDB")

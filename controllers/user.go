@@ -34,6 +34,7 @@ func UserDelete(c *gin.Context) {
 }
 
 func UserNew(c *gin.Context) {
+        log.Println("creating new user")
 	id, err := SessionId(c)
 	if err != nil || id != "admin" {
 		c.AbortWithStatus(http.StatusForbidden)
