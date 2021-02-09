@@ -44,6 +44,10 @@ export class HomeComponent implements OnInit {
     return user.data.received.filter((x) => x.genderOfSender === '1');
   }
 
+  hearts(user) {
+    return user.data.received;
+  }
+
   femaleHearts(user) {
     return user.data.received.filter((x) => x.genderOfSender === '0');
   }
