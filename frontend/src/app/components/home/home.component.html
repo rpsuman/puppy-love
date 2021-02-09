@@ -8,7 +8,7 @@
     </mat-card>
     <mat-card class="profile bigonly">
       <!-- <img mat-card-image [src]="user.image" alt="You?"> -->
-      <div mat-card-image class="profile-pic" [style.background-image]="url">
+      <div mat-card-image class="profile-pic" [style.background-image]="/assets/vday.jpg">
       </div>
       <mat-card-title> Hi {{ user.name }} </mat-card-title>
       <mat-card-content>
@@ -68,7 +68,7 @@
         </button>
         <hr *ngIf="!user.submitted">
         <div fxLayout="row" *ngIf="maleHearts(user).length !== 0">
-          <h3>Hearts from people that the OA identifies as male:</h3>
+          <h3>Nr of Hearts from people:</h3>
         </div>
         <div fxLayout="row" fxLayoutAlign="start center">
           <img class="lovely-heart" *ngFor="let h of maleHearts(user).slice(0, 9)" src="/assets/heart.png">
