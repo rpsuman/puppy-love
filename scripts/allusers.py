@@ -61,11 +61,10 @@ for person in text:
     print("Code: " + str(resp.status_code))
     if resp.status_code > 299:
         print(resp.text)
-
-    resp = s.get(composeurl)
-    print("Code: " + str(resp.status_code))
-    if resp.status_code > 299:
-        print(resp.text)
-
+    
+resp = s.get(composeurl)
+print("Code: " + str(resp.status_code))
+if resp.status_code > 299:
+    print(resp.text)
 print("Logging out... ", end='')
 print(s.get(logouturl).status_code)
