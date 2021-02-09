@@ -9,7 +9,6 @@ import { SignupComponent } from './signup';
 export const containers = [
   AboutComponent,
   HomeComponent,
-  ResultsComponent,
   HowItWorksComponent,
   HowToComponent,
   LoginComponent,
