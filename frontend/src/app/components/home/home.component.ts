@@ -115,7 +115,7 @@ export class HomeComponent implements OnInit {
     this.main.submit().pipe(
       catchError((err) => of(console.error(err))),
       switchMap(() => this.main.matches()),
-      console.log(this.main.matches()),
+      () => console.log(this.main.matches()),
     ).subscribe(
       (match) => {
         if (match.matches === '') {
