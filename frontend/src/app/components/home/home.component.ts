@@ -122,7 +122,7 @@ export class HomeComponent implements OnInit {
           console.log(match);
           this.matches = [];
         } else {
-          Console.log(match);
+          console.log(match);
           this.matches = match.matches.split(' ').map(x => this.main.people.filter(p => p._id === x)[0]);
         }
       },
