@@ -10,7 +10,6 @@ import (
 	"github.com/pclubiitk/puppy-love/utils"
 
 	"github.com/gin-contrib/sessions"
-	"github.com/gin-contrib/cookie"
 	"github.com/gin-gonic/gin"
 )
 
