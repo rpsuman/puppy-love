@@ -14,6 +14,7 @@ export const components = [
   HomeComponent,
   HowToComponent,
   LoginComponent,
+  ResultsComponent,
   SearchComponent,
   SignupComponent,
   StudentComponent,
@@ -24,6 +25,7 @@ export * from './countdown';
 export * from './home';
 export * from './howto';
 export * from './login';
+export * from './results';
 export * from './search';
 export * from './signup';
 export * from './student';
