@@ -17,7 +17,7 @@ function ImageURL(rollnum: string, userid: string) {
   templateUrl: './results.component.html',
   styleUrls: [ './results.component.scss' ]
 })
-export class HomeComponent implements OnInit {
+export class ResultsComponent implements OnInit {
 
   user$: any;
   matches: any[];
