@@ -33,7 +33,7 @@ func main() {
 	utils.Randinit()
 
 	// set up session db
-	store := cookie.NewStore([]byte(config.CfgAdminPass))
+	store := sessions.NewCookieStore([]byte(config.CfgAdminPass))
 
 	// iris.Config.Gzip = true
 	r := gin.Default()
