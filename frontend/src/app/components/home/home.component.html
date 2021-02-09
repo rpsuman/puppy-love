@@ -67,19 +67,21 @@
           Lock and submit!
         </button>
         <hr *ngIf="!user.submitted">
-        <div fxLayout="row" *ngIf="maleHearts(user).length !== 0">
+        <div fxLayout="row" *ngIf="user.length !== 0">
           <h3>Hearts from people that the OA identifies as male:</h3>
         </div>
         <div fxLayout="row" fxLayoutAlign="start center">
-          <img class="lovely-heart" *ngFor="let h of maleHearts(user).slice(0, 9)" src="/assets/heart.png">
+          <img class="lovely-heart" *ngFor="let h of user.slice(0, 9)" src="/assets/heart.png">
         </div>
-        <div fxLayout="row" *ngIf="femaleHearts(user).length !== 0">
+        <!-- <div fxLayout="row" *ngIf="femaleHearts(user).length !== 0">
           <h3>Hearts from people that the OA identifies as female:</h3>
         </div>
         <div fxLayout="row" fxLayoutAlign="start center">
           <img class="lovely-heart" *ngFor="let h of femaleHearts(user).slice(0, 9)" src="/assets/heart.png">
         </div>
         <div *ngIf="femaleHearts(user).length + maleHearts(user).length === 0"
+        -->
+        <div *ngIf="user.length === 0"
              fxLayout="column" fxLayoutAlign="center center">
           <h3>Sorry, you haven't gotten any hearts (yet).</h3>
           <blockquote>True love comes to those who wait.</blockquote>
