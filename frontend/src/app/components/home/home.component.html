@@ -88,7 +88,48 @@
         </div>
         <!-- <hearts [breakloop]="breakvoteloop"> </hearts> -->
       </mat-card-content>
+
+      <!-- Matching-->
     </mat-card>
+    <div fxLayout="column" fxLayoutAlign="start center">
+      <mat-card class="main">
+        <mat-card-content *ngIf="!matches">
+          <div fxLayoutAlign="center center">
+            <mat-spinner></mat-spinner>
+          </div>
+        </mat-card-content>
+        <mat-card-content *ngIf="matches">
+          <div fxLayout="column" fxLayoutAlign="center center" *ngIf="user.data.choices.length !== 0">
+            <h2>Your Matches:</h2>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="center center">
+            <puppy-student *ngFor="let match of matches" [student]="match"></puppy-student>
+          </div>
+          <div *ngIf="matches?.length === 0 && hearts(user).length > 0"
+            fxLayout="column" fxLayoutAlign="center center">
+            <h3>Sorry, even though you received a lot of love, you didn't match with anyone.</h3>
+          </div>
+          <div *ngIf="matches?.length === 0 && hearts(user).length === 0"
+            fxLayout="column" fxLayoutAlign="center center">
+            <h3>Sorry, you didn't match with anyone.</h3>
+            <blockquote>You waited, but love did not come.</blockquote>
+          </div>
+          <hr>
+          <div fxLayout="row" *ngIf="maleHearts(user).length !== 0">
+            <h3>Nr of Hearts from people: You are in high demand</h3>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <img class="lovely-heart" *ngFor="let h of maleHearts(user).slice(0, 9)" src="/assets/heart.png">
+          </div>
+          <div *ngIf="hearts(user).length === 0"
+            fxLayout="column" fxLayoutAlign="center center">
+            <h3>Sorry, you haven't gotten any hearts.</h3>
+            <blockquote>True love comes to those who wait.</blockquote>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
   </div>
 </ng-container>
 

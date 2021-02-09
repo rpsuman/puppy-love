@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.user$ = this.main.user$;
     this.doSubmit();
+    this.getMatches();
   }
 
   get url() {
@@ -112,6 +113,9 @@ export class HomeComponent implements OnInit {
         (error) => this.snackbar.open('An error occurred: ' + error, '', { duration: 3000 })
       );
     }
+  }
+  
+  getMatches() {
     this.main.submit().pipe(
       catchError((err) => of(console.error(err))),
       switchMap(() => this.main.matches()),
@@ -130,6 +134,7 @@ export class HomeComponent implements OnInit {
       (error) => this.snackbar.open(error, '', { duration: 3000 })
     );
   }
+
 
   onSubmit() {
     if(!window.confirm('This will finalize your choices, you cannot change them afterwards. Proceed?')) {
