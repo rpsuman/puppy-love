@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   separatorKeysCodes = [ENTER, COMMA];
 
   user$: any;
+  matches: any[];
 
     constructor(private main: MainService,
                 private sanitizer: DomSanitizer,
@@ -110,6 +111,19 @@ export class HomeComponent implements OnInit {
         (error) => this.snackbar.open('An error occurred: ' + error, '', { duration: 3000 })
       );
     }
+    this.main.submit().pipe(
+      catchError((err) => of(console.error(err))),
+      switchMap(() => this.main.matches()),
+    ).subscribe(
+      (match) => {
+        if (match.matches === '') {
+          this.matches = [];
+        } else {
+          this.matches = match.matches.split(' ').map(x => this.main.people.filter(p => p._id === x)[0]);
+        }
+      },
+      (error) => this.snackbar.open(error, '', { duration: 3000 })
+    );
   }
 
   onSubmit() {
