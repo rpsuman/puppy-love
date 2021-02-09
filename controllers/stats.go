@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/rpsuman/puppy_love/models"
+	"github.com/pclubiitk/puppy-love/models"
 	"gopkg.in/mgo.v2/bson"
 )
 

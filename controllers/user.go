@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/rpsuman/puppy_love/db"
-	"github.com/rpsuman/puppy_love/models"
-	"github.com/rpsuman/puppy_love/utils"
+	"github.com/pclubiitk/puppy-love/db"
+	"github.com/pclubiitk/puppy-love/models"
+	"github.com/pclubiitk/puppy-love/utils"
 
 	"github.com/gin-gonic/gin"
 	"gopkg.in/mgo.v2/bson"

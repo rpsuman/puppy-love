@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/rpsuman/puppy_love/config"
-	"github.com/rpsuman/puppy_love/db"
-	"github.com/rpsuman/puppy_love/router"
-	"github.com/rpsuman/puppy_love/utils"
+	"github.com/pclubiitk/puppy-love/config"
+	"github.com/pclubiitk/puppy-love/db"
+	"github.com/pclubiitk/puppy-love/router"
+	"github.com/pclubiitk/puppy-love/utils"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/cookie"
