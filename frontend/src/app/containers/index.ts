@@ -9,6 +9,7 @@ import { SignupComponent } from './signup';
 export const containers = [
   AboutComponent,
   HomeComponent,
+  ResultsComponent,
   HowItWorksComponent,
   HowToComponent,
   LoginComponent,
@@ -18,6 +19,7 @@ export const containers = [
 
 export * from './about';
 export * from './home';
+export * from './results';
 export * from './how-it-works';
 export * from './howto';
 export * from './login';
