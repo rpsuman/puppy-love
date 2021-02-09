@@ -11,6 +11,7 @@ import {
   LoginComponent,
   MainComponent,
   SignupComponent,
+  ResultComponent,
   HomeComponent,
 } from './containers';
 
@@ -23,7 +24,7 @@ const routes: Routes = [{
     { path: 'login', component: LoginComponent, canActivate: [ LoggedOutGuard ] },
     { path: 'signup', component: SignupComponent, canActivate: [ LoggedOutGuard ] },
   ]
-}, { path: 'home', component: HomeComponent, canActivate: [ LoggedInGuard ] }
+}, { path: 'home', component: ResultComponent, canActivate: [ LoggedInGuard ] }
 ];
 
 @NgModule({

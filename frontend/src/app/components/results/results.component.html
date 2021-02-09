@@ -36,36 +36,36 @@
           <div fxLayout="row wrap" fxLayoutAlign="center center">
             <puppy-student *ngFor="let match of matches" [student]="match"></puppy-student>
           </div>
-          <div *ngIf="matches?.length === 0 && femaleHearts(user).length + maleHearts(user).length > 0"
+          <div *ngIf="matches?.length === 0 && hearts(user).length > 0"
             fxLayout="column" fxLayoutAlign="center center">
             <h3>Sorry, even though you received a lot of love, you didn't match with anyone.</h3>
           </div>
-          <div *ngIf="matches?.length === 0 && femaleHearts(user).length + maleHearts(user).length === 0"
+          <div *ngIf="matches?.length === 0 && hearts(user).length === 0"
             fxLayout="column" fxLayoutAlign="center center">
             <h3>Sorry, you didn't match with anyone.</h3>
             <blockquote>You waited, but love did not come.</blockquote>
           </div>
           <hr>
           <div fxLayout="row" *ngIf="maleHearts(user).length !== 0">
-            <h3>Hearts from people that the OA identifies as male:</h3>
+            <h3>Nr of Hearts from people: You are in high demand</h3>
           </div>
           <div fxLayout="row" fxLayoutAlign="start center">
             <img class="lovely-heart" *ngFor="let h of maleHearts(user).slice(0, 9)" src="/assets/heart.png">
           </div>
-          <div fxLayout="row" *ngIf="femaleHearts(user).length !== 0">
+          <!--<div fxLayout="row" *ngIf="femaleHearts(user).length !== 0">
             <h3>Hearts from people that the OA identifies as female:</h3>
           </div>
           <div fxLayout="row" fxLayoutAlign="start center">
             <img class="lovely-heart" *ngFor="let h of femaleHearts(user).slice(0, 9)" src="/assets/heart.png">
-          </div>
-          <div *ngIf="femaleHearts(user).length + maleHearts(user).length === 0"
+          </div> -->
+          <div *ngIf="hearts(user).length === 0"
             fxLayout="column" fxLayoutAlign="center center">
             <h3>Sorry, you haven't gotten any hearts.</h3>
             <blockquote>True love comes to those who wait.</blockquote>
           </div>
         </mat-card-content>
       </mat-card>
-      <mat-card class="main" *ngIf="stats">
+      <!-- <mat-card class="main" *ngIf="stats">
         <mat-card-title> Stats </mat-card-title>
         <mat-card-content>
           <div fxLayout="row wrap" fxLayoutAlign="center center">
@@ -79,7 +79,7 @@
                 [doughnut]="false">
               </ngx-charts-pie-chart>
             </div>
-            <div class="chart">
+             <div class="chart">
               <h2> Female Registrations </h2>
               <ngx-charts-pie-chart [scheme]="colorScheme"
                 [results]="fregs"
@@ -128,13 +128,13 @@
                 [labels]="true"
                 [doughnut]="false">
               </ngx-charts-pie-chart>
-            </div>
+            </div> 
           </div>
           <mat-card-actions>
             <h4 style="text-align: center;"> Note: Males and Females refer to people identified as Male or Female by OA </h4>
           </mat-card-actions>
         </mat-card-content>
-      </mat-card>
+      </mat-card> -->
     </div>
   </div>
 </ng-container>

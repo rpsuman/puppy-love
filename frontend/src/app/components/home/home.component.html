@@ -68,7 +68,7 @@
         </button>
         <hr *ngIf="!user.submitted">
         <div fxLayout="row" *ngIf="hearts(user).length !== 0">
-          <h3>Nr of Hearts from people:</h3>
+          <h3>Nr of Hearts from people: You are in high demand</h3>
         </div>
         <div fxLayout="row" fxLayoutAlign="start center">
           <img class="lovely-heart" *ngFor="let h of hearts(user).slice(0, 9)" src="/assets/heart.png">

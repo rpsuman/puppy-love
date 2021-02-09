@@ -3,7 +3,7 @@ Puppy Love
 
 The modern and better avatar of Programming Club's [puppy-love](https://github.com/pclubiitk/valentine).
 
-Puppy Love is a platform for shy people to reach out anonymously to their crush. They can sign up and mark up to 4 of their crushes. On Valentine's day, the platform will match them anonymously, and will inform them if both of them like each other.
+Puppy Love is a platform for people to reach out anonymously to their crush. They can sign up and mark up to 4 of their crushes. On Valentine's day, the platform will match them anonymously, and will inform them if both of them like each other.
 
 Used in IIT Kanpur from 7th to 14th February, 2017, witnessing 1800+ registrants.
 
