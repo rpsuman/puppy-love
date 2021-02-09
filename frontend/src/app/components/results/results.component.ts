@@ -57,7 +57,7 @@ export class ResultsComponent implements OnInit {
     }];
   }
 
-  get hearts() {
+  get hearts_stats() {
     const stats = this.stats;
     const totalMaleHearts = stats.othermaleHearts + stats.y15maleHearts + stats.y16maleHearts + stats.y17maleHearts + stats.y18maleHearts;
     const totalFemaleHearts = stats.otherfemaleHearts + stats.y15femaleHearts + stats.y16femaleHearts + stats.y17femaleHearts + stats.y18femaleHearts;
