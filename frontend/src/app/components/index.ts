@@ -1,6 +1,7 @@
 import { AboutComponent } from './about';
 import { CountdownComponent } from './countdown';
 import { HomeComponent } from './home';
+import { ResultsComponent } from './results';
 import { HowToComponent } from './howto';
 import { LoginComponent } from './login';
 import { SearchComponent } from './search';
