@@ -86,6 +86,7 @@ interface User {
     hearts: Heart[],
     lastCheck: number,
     received: ReceivedHeart[],
+    matches: MatchInfo[],
   }
 }
 
@@ -236,6 +237,7 @@ export class MainService {
     return this.http.post('/api/session/login', { username, password }).pipe(
       switchMap(() => this.getInfo(username, _password)),
       switchMap((user) => this.getHearts(user)),
+      switchMap(() => this.matches()),
       catchError((err) => {
         console.log(err);
         if (err.error instanceof Error) {
