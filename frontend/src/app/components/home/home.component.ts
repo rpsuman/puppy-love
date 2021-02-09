@@ -17,7 +17,7 @@ function ImageURL(rollnum: string, userid: string) {
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.scss' ]
 })
-export class HomeComponent implements OnInit {
+export class ResultsComponent implements OnInit {
 
   // Enter, comma
   separatorKeysCodes = [ENTER, COMMA];
