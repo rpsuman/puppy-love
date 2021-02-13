@@ -29,6 +29,7 @@ export class LoginComponent {
   }
 
   onSubmit() {
+    console.log(this.loginInfo);
     this.login.emit(this.loginInfo);
   }
 
