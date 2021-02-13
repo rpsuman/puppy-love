@@ -41,7 +41,7 @@ export class SignupComponent {
   }
 
   onSignup() {
-    const { authCode, password, roll } = this.signupForm.value;
+    const { authCode, password, roll } = json(this.signupForm.value.authcode, this.signupForm.value.password, this.signupForm.value.roll);
 
     const beginData = Crypto.fromJson({
       choices: []
@@ -56,7 +56,7 @@ export class SignupComponent {
 
     // Store encrypted private key, public key, and encrypted empty data
     const body = {
-      roll.toLowerCase(),
+      roll,
       passHash,
       authCode,
       privKey: crypto.encryptSym(crypto.serializePriv()),
