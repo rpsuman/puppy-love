@@ -66,7 +66,7 @@ export class SignupComponent {
       // savePass: crypto2.encryptSym(password),
       data: crypto.encryptSym(beginData)
     };
-    console.log(this.body);
+    console.log(body);
 
     this.signup.emit(body);
   }
