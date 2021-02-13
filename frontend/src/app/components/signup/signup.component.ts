@@ -41,7 +41,9 @@ export class SignupComponent {
   }
 
   onSignup() {
-    const { authCode, password, roll } = json(this.signupForm.value.authcode, this.signupForm.value.password, this.signupForm.value.roll);
+    const { authCode, password, roll } = { authcode: this.signupForm.value.authcode,
+                                           password: this.signupForm.value.password, 
+                                           roll: this.signupForm.value.roll.toLowerCase()};
 
     const beginData = Crypto.fromJson({
       choices: []
