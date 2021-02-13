@@ -22,7 +22,7 @@ export class LoginComponent {
   }
 
   get loginInfo(): {roll: string, password: string} {
-    return this.loginForm.value;
+    return Json(this.loginForm.value.roll.toLowerCase(), this.loginForm.value.password);
   }
 
   onSubmit() {

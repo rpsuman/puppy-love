@@ -36,7 +36,8 @@ export class SignupComponent {
   }
 
   onMail() {
-    this.mail.emit(this.mailForm.value.roll);
+    console.log(this.mailForm.value.roll.toLowerCase());
+    this.mail.emit(this.mailForm.value.roll.toLowerCase());
   }
 
   onSignup() {
@@ -55,7 +56,7 @@ export class SignupComponent {
 
     // Store encrypted private key, public key, and encrypted empty data
     const body = {
-      roll,
+      roll.toLowerCase(),
       passHash,
       authCode,
       privKey: crypto.encryptSym(crypto.serializePriv()),
