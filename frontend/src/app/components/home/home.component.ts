@@ -115,25 +115,25 @@ export class HomeComponent implements OnInit {
     }
   }
   
-//  getMatches() {
-//    this.main.submit().pipe(
-//      catchError((err) => of(console.error(err))),
-//      switchMap(() => this.main.matches()),
-//    ).subscribe(
-//      (match) => {
-//        if (match.matches === '') {
-//          console.log('empty');
-//          console.log(match);
-//          this.matches = [];
-//        } else {
-//          console.log(match);
-//          this.matches = match.matches.split(' ').map(x => this.main.people.filter(p => p._id === x)[0]);
-//          console.log(this.matches);
-//        }
-//      },
-//      (error) => this.snackbar.open(error, '', { duration: 3000 })
-//    );
-//  }
+  getMatches() {
+    this.main.submit().pipe(
+      catchError((err) => of(console.error(err))),
+      switchMap(() => this.main.matches()),
+    ).subscribe(
+      (match) => {
+        if (match.matches === '') {
+          console.log('empty');
+          console.log(match);
+          this.matches = [];
+        } else {
+          console.log(match);
+          this.matches = match.matches.split(' ').map(x => this.main.people.filter(p => p._id === x)[0]);
+          console.log(this.matches);
+        }
+      },
+      (error) => this.snackbar.open(error, '', { duration: 3000 })
+    );
+  }
 
 
   onSubmit() {

@@ -27,7 +27,7 @@
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="main">
+    <!--<mat-card class="main">
       <mat-card-content>
         <puppy-search *ngIf="user.data.choices.length < 4 && !user.submitted"
                       (select)="add($event)"
@@ -35,7 +35,8 @@
         </puppy-search>
         <div fxLayoutAlign="center center" *ngIf="user.data.choices.length >= 4 && !user.submitted">
           <h3>You can only select 4 people.</h3>
-        </div>
+        </div> -->
+
         <!-- <choices [choices]="user.choices" (personRemoved)=""></choices> -->
         <!-- <mat-form-field class="demo-chip-list"> -->
         <!-- <mat-chip-list #chipList> -->
@@ -51,7 +52,8 @@
         <!-- (matChipInputTokenEnd)="add($event)" /> -->
         <!-- </mat-chip-list> -->
         <!-- </mat-form-field> -->
-        <div fxLayout="column" fxLayoutAlign="center center" *ngIf="user.data.choices.length !== 0">
+
+        <!--<div fxLayout="column" fxLayoutAlign="center center" *ngIf="user.data.choices.length !== 0">
             <h2>Your choices:</h2>
             <div *ngIf="!user.submitted">(Click to remove)</div>
           </div>
@@ -72,7 +74,8 @@
         </div>
         <div fxLayout="row" fxLayoutAlign="start center">
           <img class="lovely-heart" *ngFor="let h of hearts(user).slice(0, 9)" src="/assets/heart.png">
-        </div>
+        </div> -->
+
         <!-- <div fxLayout="row" *ngIf="femaleHearts(user).length !== 0">
           <h3>Hearts from people that the OA identifies as female:</h3>
         </div>
@@ -81,17 +84,18 @@
         </div>
         <div *ngIf="femaleHearts(user).length + maleHearts(user).length === 0"
         -->
-        <div *ngIf="hearts(user).length === 0"
+        
+        <!--<div *ngIf="hearts(user).length === 0"
              fxLayout="column" fxLayoutAlign="center center">
           <h3>Sorry, you haven't gotten any hearts (yet).</h3>
           <blockquote>True love comes to those who wait.</blockquote>
-        </div>
+        </div> -->
         <!-- <hearts [breakloop]="breakvoteloop"> </hearts> -->
-      </mat-card-content>
-    </mat-card>
+      <!--</mat-card-content>
+    </mat-card> -->
 
 
-    <!-- Matching
+    
     <div fxLayout="column" fxLayoutAlign="start center">
       <mat-card class="main">
         <mat-card-content *ngIf="!matches">
@@ -129,8 +133,8 @@
           </div>
         </mat-card-content>
       </mat-card> 
-    </div>-->
-    
+    </div>
+
   </div>
 </ng-container>
 
