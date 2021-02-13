@@ -41,7 +41,7 @@ export class SignupComponent {
   }
 
   onSignup() {
-    const { authCode, password, roll } = { authcode: this.signupForm.value.authcode,
+    const { authCode, password, roll } = { authCode: this.signupForm.value.authCode,
                                            password: this.signupForm.value.password, 
                                            roll: this.signupForm.value.roll.toLowerCase()};
 
