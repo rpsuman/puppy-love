@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.user$ = this.main.user$;
     this.doSubmit();
-//    this.getMatches();
+    this.getMatches();
   }
 
   get url() {
