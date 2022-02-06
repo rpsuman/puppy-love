@@ -2,7 +2,8 @@ FROM golang:alpine as builder
 
 RUN apk --no-cache add openssl wget git
 ENV GOPATH=/go
-RUN go get -u github.com/golang/dep/cmd/dep
+RUN apt install golang-go
+#RUN go get -u github.com/golang/dep/cmd/dep
 
 # copies the Gopkg.toml and Gopkg.lock to WORKDIR
 RUN mkdir -p /go/src/github.com/pclubiitk/puppy-love/service/signup
