@@ -78,6 +78,8 @@ func MailerService(Db PuppyDb, mail_channel chan User) {
 
 	for u := range mail_channel {
 		log.Println("Setting up smtp")
+		log.Println(EmailUser)
+		log.Println(EmailPass)
 
 		to := []string{u.Email}
 		msg := []byte("To: " + u.Email + "\r\n" +
