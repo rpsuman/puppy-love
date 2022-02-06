@@ -2,11 +2,11 @@ FROM golang:alpine as builder
 
 RUN apk --no-cache add openssl wget git
 ENV GOPATH=/go
-#RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 #RUN go install github.com/golang/dep/cmd/dep@latest
-RUN git clone https://github.com/golang/dep.git
-RUN cd dep
-RUN ./install.sh
+#RUN git clone https://github.com/golang/dep.git
+#RUN cd dep
+#RUN ./install.sh
 
 # copies the Gopkg.toml and Gopkg.lock to WORKDIR
 RUN mkdir -p /go/src/github.com/pclubiitk/puppy-love/service/signup
