@@ -17,6 +17,7 @@ WORKDIR /go/src/github.com/pclubiitk/puppy-love/service/signup
 COPY Gopkg.toml Gopkg.lock ./
 
 RUN go mod init
+RUN go mod tidy
 #RUN dep ensure -v -vendor-only
 
 COPY . .
