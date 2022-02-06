@@ -4,7 +4,7 @@ RUN apk --no-cache add openssl wget git
 #ENV GOPATH=/go
 ENV GOPATH=$HOME/go
 ENV PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-RUN go mod init github.com/golang/dep
+#RUN go mod init github.com/golang/dep
 #RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 #RUN go install github.com/golang/dep/cmd/dep@latest
 #RUN git clone https://github.com/golang/dep.git
@@ -16,7 +16,7 @@ RUN mkdir -p /go/src/github.com/pclubiitk/puppy-love/service/signup
 WORKDIR /go/src/github.com/pclubiitk/puppy-love/service/signup
 COPY Gopkg.toml Gopkg.lock ./
 
-RUN dep ensure -v -vendor-only
+#RUN dep ensure -v -vendor-only
 
 COPY . .
 RUN go build
