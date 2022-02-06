@@ -108,6 +108,7 @@ func UserFirst(c *gin.Context) {
 // User asking for email
 // ---------------------
 func UserMail(c *gin.Context) {
+    log.Print("enteredhere")
 	id := c.Param("id")
 
 	type mailData struct {
