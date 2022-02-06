@@ -16,6 +16,7 @@ RUN mkdir -p /go/src/github.com/pclubiitk/puppy-love/service/signup
 WORKDIR /go/src/github.com/pclubiitk/puppy-love/service/signup
 COPY Gopkg.toml Gopkg.lock ./
 
+RUN go mod init
 #RUN dep ensure -v -vendor-only
 
 COPY . .
