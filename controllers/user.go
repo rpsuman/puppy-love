@@ -118,7 +118,7 @@ func UserMail(c *gin.Context) {
 	u := mailData{}
 
 	if err := Db.GetById("user", id).One(&u); err != nil {
-
+        log.Print("Iamhere")
 		user := models.NewUserF(id)
 
 		if err := Db.GetCollection("user").Insert(&user); err != nil {
