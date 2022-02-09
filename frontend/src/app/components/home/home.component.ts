@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.user$ = this.main.user$;
-    this.doSubmit();
+    //this.doSubmit();
     //this.getMatches();
   }
 
