@@ -37,10 +37,10 @@
           <h3>You can only select 4 people.</h3>
         </div>
 
-         <choices [choices]="user.choices" (personRemoved)=""></choices>
+         <!-- <choices [choices]="user.choices" (personRemoved)=""></choices>
          <mat-form-field class="demo-chip-list">
          <mat-chip-list #chipList> -->
-         <mat-chip *ngFor="let choice of user.data.choices" [selectable]="true"
+         <!-- <mat-chip *ngFor="let choice of user.data.choices" [selectable]="true"
          [removable]="true" (remove)="remove(choice)">
          {{ choice._id }}
          <mat-icon matChipRemove>cancel</mat-icon>
@@ -51,7 +51,7 @@
           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
           (matChipInputTokenEnd)="add($event)" />
           </mat-chip-list>
-          </mat-form-field>
+          </mat-form-field> -->
 
         <div fxLayout="column" fxLayoutAlign="center center" *ngIf="user.data.choices.length !== 0">
             <h2>Your choices:</h2>
